@@ -1,0 +1,31 @@
+{
+    "name": "@thesold/postcodeanywhere",
+    "version": "1.0.0",
+    "description": "A simple API wrapper for the Postcode Anywhere (PCA Direct) Service",
+    "main": "index.js",
+    "files": [
+        "dist/index.js",
+        "readme.md"
+    ],
+    "scripts": {
+        "build": "rollup -c",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "precommit": "lint-staged"
+    },
+    "author": "Marco Mark <m2de@outlook.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.0.2",
+        "babel-preset-es2015-rollup": "^3.0.0",
+        "eslint": "^4.12.1",
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-plugin-import": "^2.8.0",
+        "husky": "^0.14.3",
+        "jsonlint": "^1.6.0",
+        "lint-staged": "^6.0.0",
+        "markdownlint-cli": "^0.5.0",
+        "rollup": "^0.59.0",
+        "rollup-plugin-babel": "^3.0.4"
+    }
+}
