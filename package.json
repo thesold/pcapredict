@@ -1,6 +1,6 @@
 {
     "name": "@thesold/pcapredict",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A simple API wrapper for the Postcode Anywhere (PCA Direct) Service",
     "repository": {
         "type": "git",
