@@ -1,3 +1,5 @@
 import Lookup from './Lookup'
 
-export default Lookup
+export default {
+    Lookup,
+}
