@@ -25,7 +25,7 @@ npm install @thesold/pcapredict
 ## Usage
 
 ```js
-import Lookup from '@thesold/pcapredict'
+import { Lookup } from '@thesold/pcapredict'
 
 const lookup = new Lookup('API-KEY')
 
