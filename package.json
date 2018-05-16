@@ -1,7 +1,11 @@
 {
-    "name": "@thesold/postcodeanywhere",
+    "name": "@thesold/pcapredict",
     "version": "1.0.0",
     "description": "A simple API wrapper for the Postcode Anywhere (PCA Direct) Service",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/thesold/pcapredict.git"
+    },
     "main": "index.js",
     "files": [
         "dist/index.js",
@@ -9,6 +13,7 @@
     ],
     "scripts": {
         "build": "rollup -c",
+        "watch": "rollup -mwc",
         "test": "echo \"Error: no test specified\" && exit 1",
         "precommit": "lint-staged"
     },
@@ -17,6 +22,7 @@
     "devDependencies": {
         "babel-core": "^6.26.3",
         "babel-eslint": "^8.0.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-es2015-rollup": "^3.0.0",
         "eslint": "^4.12.1",
         "eslint-config-airbnb-base": "^12.1.0",
@@ -27,5 +33,8 @@
         "markdownlint-cli": "^0.5.0",
         "rollup": "^0.59.0",
         "rollup-plugin-babel": "^3.0.4"
+    },
+    "dependencies": {
+        "axios": "^0.18.0"
     }
 }
