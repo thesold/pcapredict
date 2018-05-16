@@ -10,7 +10,7 @@ Authors:
 
 An unofficial implementation of the PCA Predict API for modern Javascript to easily lookup addresses from Post Codes or Partial Address details using the PCA Predict service.
 
-## Requirements
+## Requirements
 
 A [PCA Predict](https://www.pcapredict.com/) account and API key is required to use this package.
 
