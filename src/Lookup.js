@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 
 export default class Lookup {
     constructor(key) {
@@ -102,11 +102,11 @@ export default class Lookup {
      * @memberof Lookup
      */
     async get() {
-        await this.axios.get(this.findUrl, this.queryParams()).then(async ({ data }) => {
-            if (data.length === 0) return Promise.reject(new Error('No results find for query'))
-            if (data[0].Error) return Promise.reject(data[0])
+        await this.axios.get(this.findUrl, this.queryParams()).then(async ({ data: { Items } }) => {
+            if (Items.length === 0) return Promise.reject(new Error('No results find for query'))
+            if (Items[0].Error) return Promise.reject(Items[0])
 
-            const entries = await Promise.all(data.map(async postcode =>
+            const entries = await Promise.all(Items.map(async postcode =>
                 this.resolve(postcode).then(async addresses => addresses.map((addressOption) => {
                     this.addresses.push(addressOption)
 
@@ -127,7 +127,7 @@ export default class Lookup {
      * @memberof Lookup
      */
     get findUrl() {
-        const url = `${this.baseUrl}/Find/${this.apiVersion}/json.ws?`
+        const url = `${this.baseUrl}/Find/${this.apiVersion}/json3ex.ws?`
 
         return url
     }
@@ -140,7 +140,7 @@ export default class Lookup {
      * @memberof Lookup
      */
     get retrieveUrl() {
-        const url = `${this.baseUrl}/Retrieve/${this.apiVersion}/json.ws?`
+        const url = `${this.baseUrl}/Retrieve/${this.apiVersion}/json3ex.ws?`
 
         return url
     }
@@ -172,11 +172,11 @@ export default class Lookup {
     resolve({ Id }) {
         return this.axios.get(this.findUrl, this.queryParams({
             container: Id,
-        })).then(({ data }) => {
-            if (data.length === 0) return Promise.reject(new Error('No results for resolve query'))
-            if (data[0].Error) return Promise.reject(new Error(data[0]))
+        })).then(({ data: { Items } }) => {
+            if (Items.length === 0) return Promise.reject(new Error('No results for resolve query'))
+            if (Items[0].Error) return Promise.reject(new Error(Items[0]))
 
-            return Promise.resolve(data)
+            return Promise.resolve(Items)
         }).catch(error => Promise.reject(error))
     }
 
@@ -190,11 +190,11 @@ export default class Lookup {
     async retrieve({ Id }) {
         const address = await this.axios.get(this.retrieveUrl, this.queryParams({
             Id,
-        })).then(({ data }) => {
-            if (data.length === 0) return Promise.reject(new Error('No results for retrieve query'))
-            if (data[0].Error) return Promise.reject(data[0])
+        })).then(({ data: { Items } }) => {
+            if (Items.length === 0) return Promise.reject(new Error('No results for retrieve query'))
+            if (Items[0].Error) return Promise.reject(Items[0])
 
-            return Promise.resolve(data[0])
+            return Promise.resolve(Items[0])
         }).catch(error => Promise.reject(error))
 
         return Promise.resolve(address)

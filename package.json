@@ -6,7 +6,7 @@
         "type": "git",
         "url": "git+ssh://git@github.com/thesold/pcapredict.git"
     },
-    "main": "index.js",
+    "main": "dist/index.js",
     "files": [
         "dist/index.js",
         "readme.md"
