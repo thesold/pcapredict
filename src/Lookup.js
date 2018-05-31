@@ -111,7 +111,7 @@ export default class Lookup {
                     this.addresses.push(addressOption)
 
                     return Promise.resolve(addressOption)
-                }))))
+                })))).catch(error => console.log(error))
 
             return Promise.resolve(entries)
         })
