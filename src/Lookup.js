@@ -111,7 +111,7 @@ export default class Lookup {
                     this.addresses.push(addressOption)
 
                     return Promise.resolve(addressOption)
-                })))).catch(error => console.log(error))
+                })))).catch(() => Promise.reject(new Error('The postcode could not be resolved')))
 
             return Promise.resolve(entries)
         })
