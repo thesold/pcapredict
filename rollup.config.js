@@ -11,7 +11,9 @@ export default [
             'axios',
         ],
         plugins: [
-            RollupPluginBabel(),
+            RollupPluginBabel({
+                exclude: 'node_modules/**',
+            }),
         ],
     },
     {
