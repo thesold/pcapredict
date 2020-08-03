@@ -1,32 +1,22 @@
-import RollupPluginBabel from 'rollup-plugin-babel'
+import RollupPluginTypescript from '@rollup/plugin-typescript'
 
 export default [
     {
-        input: 'src/index.js',
+        input: 'src/index.ts',
         output: {
-            file: 'dist/index.js',
-            format: 'cjs',
+            format: 'es',
+            dir: './dist'
         },
         external: [
             'axios',
         ],
         plugins: [
-            RollupPluginBabel({
+            RollupPluginTypescript({
                 exclude: 'node_modules/**',
+                declaration: true,
+                declarationDir: 'dist/',
+                rootDir: 'src/'
             }),
-        ],
-    },
-    {
-        input: 'src/demo.js',
-        output: {
-            file: 'dist/demo.js',
-            format: 'cjs',
-        },
-        external: [
-            'axios',
-        ],
-        plugins: [
-            RollupPluginBabel(),
         ],
     },
 ]

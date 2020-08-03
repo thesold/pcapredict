@@ -1,6 +1,6 @@
 {
-    "*.js": [
-        "eslint"
+    "*.ts": [
+        "tslint"
     ],
     "*.md": [
         "markdownlint"
