@@ -1,6 +1,6 @@
-# Postcode Anywhere (PCA Predict) API Wrapper
+# Loqate (Postcode Anywhere / PCA Predict) API Wrapper
 
-A simple API wrapper for the Postcode Anywhere (PCA Predict) Service
+A simple API wrapper for the Loqate (Postcode Anywhere / PCA Predict) Service
 
 Authors:
 
@@ -8,11 +8,11 @@ Authors:
 
 ## Overview
 
-An unofficial implementation of the PCA Predict API for modern Javascript to easily lookup addresses from Post Codes or Partial Address details using the PCA Predict service.
+An unofficial implementation of the Loqate API for modern Javascript to easily lookup addresses from Post Codes or Partial Address details.
 
 ## Requirements
 
-A [PCA Predict](https://www.pcapredict.com/) account and API key is required to use this package.
+A [Loqate](https://www.loqate.com/) account and API key is required to use this package.
 
 ## Installation
 

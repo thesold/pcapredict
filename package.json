@@ -1,14 +1,18 @@
 {
     "name": "@thesold/pcapredict",
     "version": "1.0.5",
-    "description": "A simple API wrapper for the Postcode Anywhere (PCA Direct) Service",
+    "description": "A simple API wrapper for the Loqate (Postcode Anywhere / PCA Predict) Service",
     "repository": {
         "type": "git",
         "url": "git+ssh://git@github.com/thesold/pcapredict.git"
     },
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "files": [
         "dist/index.js",
+        "dist/index.d.ts",
+        "dist/Lookup.d.ts",
+        "dist/types.d.ts",
         "readme.md"
     ],
     "scripts": {
@@ -20,22 +24,17 @@
     "author": "Marco Mark <m2de@outlook.com>",
     "license": "MIT",
     "devDependencies": {
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^8.0.2",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-es2015-rollup": "^3.0.0",
-        "eslint": "^4.12.1",
-        "eslint-config-airbnb-base": "^12.1.0",
-        "eslint-plugin-import": "^2.8.0",
+        "@rollup/plugin-typescript": "^5.0.2",
         "husky": "^0.14.3",
         "jsonlint": "^1.6.0",
         "lint-staged": "^6.0.0",
         "markdownlint-cli": "^0.5.0",
-        "rollup": "^0.59.0",
-        "rollup-plugin-babel": "^3.0.4"
+        "rollup": "^2.23.0",
+        "tslint": "^6.1.2",
+        "typescript": "^3.9.7"
     },
     "dependencies": {
-        "axios": "^0.18.0"
+        "axios": "^0.19.2",
+        "slib": "^5.6.1"
     }
 }
